@@ -1,0 +1,29 @@
+## Memo
+#set( $useMemo = false )
+#if (${use_memo} == "t" || ${use_memo} == "true" || ${use_memo} == "y" || ${use_memo} == "yes")
+#set( $useMemo = true )#end
+
+#if (${useMemo})import React, {memo} from "react";#end
+#if (${useMemo} == false)import React from "react";#end;
+
+## Interface
+#set( $firstPartOfName = $NAME.substring(0, 1).toUpperCase() )
+#set( $secondPartOfName = $NAME.substring(1) )
+#set( $interfaceName = "I" + $firstPartOfName + $secondPartOfName )
+
+export interface $interfaceName {
+    
+}
+
+const $NAME = ({
+    ...props
+}: $interfaceName) => {
+    return (
+        <>
+            {null}
+        </>
+    );
+}
+#if (${useMemo})export default memo($NAME);#end
+#if (${useMemo} == false)export default $NAME;#end;
+
