@@ -12,7 +12,7 @@
 #set( $interfaceName = "I" + $firstPartOfName + $secondPartOfName )
 
 export interface $interfaceName {
-    
+    #[[$Interface$]]#
 }
 
 const $NAME = ({
@@ -20,7 +20,7 @@ const $NAME = ({
 }: $interfaceName) => {
     return (
         <>
-            {null}
+            #[[$END$]]#
         </>
     );
 }
