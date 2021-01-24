@@ -1,0 +1,10 @@
+## Async
+#set( $useAsync = false )
+#if (${use_async} == "t" || ${use_async} == "true" || ${use_async} == "y" || ${use_async} == "yes")
+#set( $useAsync = true )#end
+
+const $NAME = #if ($useAsync)async#end () => {
+
+};
+
+export default $NAME;
