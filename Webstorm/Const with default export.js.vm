@@ -4,7 +4,7 @@
 #set( $useAsync = true )#end
 
 const $NAME = #if ($useAsync)async#end () => {
-
+    #[[$END$]]#
 };
 
 export default $NAME;
