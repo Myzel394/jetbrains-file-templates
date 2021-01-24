@@ -1,0 +1,22 @@
+## Async
+#set( $useAsync = false )
+#if (${use_async} == "t" || ${use_async} == "true" || ${use_async} == "y" || ${use_async} == "yes")
+#set( $useAsync = true )#end
+
+## Interface
+#set( $firstPartOfName = $NAME.substring(0, 1).toUpperCase() )
+#set( $secondPartOfName = $NAME.substring(1) )
+#set( $interfaceName = "I" + $firstPartOfName + $secondPartOfName )
+#set( $resultName = $interfaceName + "Result" )
+
+export interface $interfaceName {
+    
+}
+
+export type $resultName = string;
+
+const $NAME = #if ($useAsync)async#end ({...props}: $interfaceName): #if ($useAsync) Promise<$resultName>#end #if ($useAsync == false) $resultName #end => {
+
+};
+
+export default $NAME;
