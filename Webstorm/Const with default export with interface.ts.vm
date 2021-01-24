@@ -10,13 +10,13 @@
 #set( $resultName = $interfaceName + "Result" )
 
 export interface $interfaceName {
-    
+    #[[$Interface$]]#
 }
 
 export type $resultName = string;
 
 const $NAME = #if ($useAsync)async#end ({...props}: $interfaceName): #if ($useAsync) Promise<$resultName>#end #if ($useAsync == false) $resultName #end => {
-
+    #[[$END$]]#
 };
 
 export default $NAME;
